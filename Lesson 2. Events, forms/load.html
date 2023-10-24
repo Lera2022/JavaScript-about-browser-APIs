@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Стили для прелоадера */
+        .loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .loader .fa-spinner {
+            font-size: 48px;
+            color: #333;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Анимация вращения */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Скрыть контент при отображении прелоадера */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <i class="fas fa-spinner"></i>
+    </div>
+
+    <div class="content hidden">
+        <h1>Заголовок</h1>
+        <p>Содержимое страницы</p>
+        <img src="https://kartinki.pics/uploads/posts/2022-12/1670271573_1-kartinkin-net-p-ogromnie-kartinki-oboi-2.jpg" alt="кот">
+    </div>
+
+    <script>
+        // Ждём полной загрузки страницы
+        window.addEventListener('load', function (e) {
+            const contentEl = document.querySelector('.content');
+            contentEl.classList.remove('hidden');
+
+            const loaderEl = document.querySelector('.loader');
+            loaderEl.style.display = 'none';
+
+        });
+    </script>
+</body>
+</html>
