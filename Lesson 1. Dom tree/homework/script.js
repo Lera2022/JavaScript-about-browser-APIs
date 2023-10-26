@@ -25,7 +25,7 @@ const trainingsData = getFromStorage() ?? [
         name: "Сайклы",
         time: "19:00 - 19:55",
         maxQuantity: 16,
-        currentQuantity: 15
+        currentQuantity: 13
     },
     {
         name: "Зумба",
@@ -48,9 +48,8 @@ const trainingsData = getFromStorage() ?? [
     <div class="card-body">
     <h5 class="card-title">${training.name}</h5>
     <p class="card-text">Время проведения: ${training.time}</p>    <p class="card-text">максимальное количество участников: ${training.maxQuantity}</p>    <p class="card-text current">текущее количество записанных участников: ${training.currentQuantity}</p>
-    <button type="button" class="btn btn-primary">Записаться</button>
-    <!-- <button type="button" class="btn btn-success">Success</button> -->
-    <button type="button" class="btn btn-danger visually-hidden">Danger</button>
+    <button data-idx="${idx}" type="button" class="btn btn-primary">Записаться</button>
+        <button data-idx="${idx}" type="button" class="btn btn-danger">Отменить запись</button>
   </div>
   </div>`;
   };
@@ -62,12 +61,32 @@ const trainingsData = getFromStorage() ?? [
   addTrainings();
 
   const shedule = document.querySelector('.container');
-  const addBtns = document.querySelectorAll('.btn-primary');
-  const delBtns = document.querySelectorAll('.btn-danger');
+  let idxActive = null;
 
   shedule.addEventListener('click', event => {
     if (event.target.classList.contains('btn-primary')) {
-      const quantity = event.target.closest('p');
-      console.log(quantity);
+      const trainingId = event.target.dataset.idx;
+      if (trainingsData[trainingId].currentQuantity < trainingsData[trainingId].maxQuantity && idxActive !== trainingId) {
+        trainingsData[trainingId].currentQuantity +=1 ;
+        addTrainings();
+        setToStorage(trainingsData);
+        idxActive = trainingId;
+      } else {
+        event.target.setAttribute('disabled', '');
+        event.target.textContent = 'уже записались';
+      }
+       }
+    if (event.target.classList.contains('btn-danger')) {
+      const trainingId = event.target.dataset.idx;
+      if (trainingsData[trainingId].currentQuantity <= trainingsData[trainingId].maxQuantity && (idxActive === trainingId)) {
+        trainingsData[trainingId].currentQuantity -=1 ;
+        addTrainings();
+        setToStorage(trainingsData);
+        idxActive = null;
+      } else {
+          event.target.setAttribute('disabled', '');
+          event.target.textContent = 'уже отменили';
+      }
     }
   })
+
