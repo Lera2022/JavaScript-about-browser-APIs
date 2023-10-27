@@ -1,0 +1,39 @@
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgba(0, 0, 0, 0.3);
+  animation: appear 0.5s ease-in-out;
+
+  &__inner {
+    border-radius: 2rem;
+    padding: 3rem;
+    background-color: #fff;
+  }
+}
+
+.hidden {
+  display: none!important;
+}
+
+

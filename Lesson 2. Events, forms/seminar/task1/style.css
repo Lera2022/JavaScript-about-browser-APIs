@@ -1,0 +1,27 @@
+.nav {
+  max-width: max-content;
+}
+.nav__list {
+  display: flex;
+  gap: 2rem;
+}
+.nav__item {
+  list-style-type: none;
+}
+.nav__link {
+  display: block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out;
+  border: 1px solid transparent;
+}
+.nav__link:hover {
+  background-color: lightcyan;
+}
+
+.active {
+  border-color: teal;
+}
+
+/*# sourceMappingURL=style.css.map */

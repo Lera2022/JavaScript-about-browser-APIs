@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+    <title>Task 4 | Lesson 2</title>
+    <style>
+      .result * {
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Вам предоставляется задача создать простой онлайн опросник, который позволяет пользователям отвечать на вопросы с
+      вариантами ответов. Ваша задача - разработать интерфейс и функциональность для этого опросника, используя HTML,
+      CSS и JavaScript.
+      Создайте интерфейс с несколькими вопросами и вариантами ответов. Каждый вопрос должен иметь несколько вариантов
+      ответов.
+      Реализуйте обработку событий, чтобы пользователи могли выбирать варианты ответов.
+      Добавьте кнопку "Завершить опрос", которая будет показывать результаты опроса.
+      При нажатии на кнопку "Завершить опрос", вы должны проверить, что пользователь ответил на все вопросы, и
+      отобразить выбранные им варианты ответов.
+      Если пользователь не ответил на все вопросы, покажите ему сообщение о необходимости ответить на все вопросы перед
+      завершением опроса.
+      По желанию можно добавить стилизацию опросника с использованием CSS для лучшего пользовательского опыта.
+    </p>
+    <form class="form">
+      <fieldset>
+        <legend>Были два козла. Сколько?</legend>
+        <input type="radio"
+               name="first"
+               value="Yes"
+               id="firstRadioFirst"><label for="firstRadioFirst">Yes</label>
+        <input type="radio"
+               name="first"
+               value="No"
+               id="firstRadioSecond"><label for="firstRadioSecond">No</label>
+        <input type="radio"
+               name="first"
+               value="Jacque Fresco, plz Login"
+               id="firstRadioThird"><label for="firstRadioThird">Jacque Fresco, plz Login</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Че делаем?</legend>
+        <input type="radio"
+               name="second"
+               value="Yes"
+               id="secondRadioFirst"><label for="secondRadioFirst">Yes</label>
+        <input type="radio"
+               name="second"
+               value="No"
+               id="secondRadioSecond"><label for="secondRadioSecond">No</label>
+        <input type="radio"
+               name="second"
+               value="Jacque Fresco, plz Login"
+               id="secondRadioThird"><label for="secondRadioThird">Jacque Fresco, plz Login</label>
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="result">
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

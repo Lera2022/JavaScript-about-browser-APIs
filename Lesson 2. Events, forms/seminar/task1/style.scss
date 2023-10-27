@@ -1,0 +1,24 @@
+.nav {
+  max-width: max-content;
+  &__list {
+    display: flex;
+    gap: 2rem;
+  }
+  &__item {
+    list-style-type: none;
+  }
+  &__link {
+    display: block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: color 0.2s ease-out, background-color 0.2s ease-out;
+    border: 1px solid transparent;
+    &:hover {
+      background-color: lightcyan;
+    }
+  }
+}
+.active {
+  border-color: teal;;
+}
