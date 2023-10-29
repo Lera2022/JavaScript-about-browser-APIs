@@ -1,0 +1,25 @@
+.container {
+    max-width: 275px;
+    background-color: grey;
+}
+
+.slide {
+    position: relative;
+}
+
+.buttons {
+    top: 100px;
+    position: absolute;
+    z-index: 5;
+}
+
+.before {
+    margin-right: 75px;
+}
+
+.dots {
+    position: absolute;
+    top: 165px;
+    z-index: 5;
+    margin-left: 110px;
+}
