@@ -30,8 +30,8 @@
   height: 50px;
   background-color: transparent;
   border: none;
-  font-size: 24px;
-  color: white;
+  font-size: 14px;
+  color: black;
 }
 
 .prev-button {
@@ -39,5 +39,5 @@
 }
 
 .next-button {
-  right: 10px;
+  right: 55px;
 }
