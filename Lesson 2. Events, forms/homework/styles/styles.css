@@ -8,6 +8,7 @@
   height: 400px;
   margin: 0 auto;
   overflow: hidden;
+
 }
 
 .slider {
@@ -40,4 +41,30 @@
 
 .next-button {
   right: 55px;
+}
+
+.first-button,
+.second-button,
+.third-button {
+  position: absolute;
+  top: 95%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 5px;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 14px;
+  color: black;
+}
+
+.first-button {
+  left: 280px;
+}
+
+.second-button {
+  left: 300px;
+}
+
+.third-button {
+  left: 320px;
 }
