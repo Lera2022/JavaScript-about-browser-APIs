@@ -9,7 +9,7 @@
 
 <body>
     <form name="superForm">
-        <select name="select" multiple>
+        <select name="selectForm" multiple>
             <option value="GeekBrains" selected>ГикБрейнс</option>
             <option value="SkillBox" selected>СкилБокс</option>
             <option value="SkillFactory">СкилФэктори</option>
@@ -19,11 +19,17 @@
     <script>
         const select = document.forms.superForm.selectForm;
         // Следующие три строки делают одно и то же
-        select.options[2].selected = true;
-        select.selectedIndex = 2;
-        select.value = 'SkillFactory';
+        // select.options[2].selected = true;
+        // select.selectedIndex = 2;
+        // select.value = 'SkillFactory';
 
-        const selected = Array.from
+        const selected = Array.from(select.options)
+            .filter(option => option.selected)
+            .map(option => option.value);
+        console.log(selected);
+
+
+
     </script>
 </body>
 
