@@ -1,0 +1,18 @@
+<html>
+
+<body>
+    <form name="superForm" onsubmit="console.log('Форма отправлена'); return false">
+        email: <input type="email" name="email">
+        checkbox: <input type="checkbox" name="checkbox">
+        <input type="submit">
+    </form>
+    <script>
+        const form = document.forms.superForm;
+
+
+        form.checkbox.oninput = () => {
+            form.submit();
+        }
+    </script>
+</body>
+</html>

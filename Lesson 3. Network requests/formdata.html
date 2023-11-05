@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<form name="superForm">
+    title: <input name="title" value="test product">
+    <br>
+    price: <input name="price" type="number" value="13.5">
+    <br>
+    description: <input name="description" value="lorem ipsum set">
+    <br>
+    image: <input name="image" value="https://i.pravatar.cc">
+    <br>
+    category: <input name="category" value="electronic">
+    <input type="submit">
+</form>
+<script>
+    'use strict';
+    const form = document.forms.superForm;
+    form.onsubmit = async (e) => {
+        e.preventDefault();
+
+
+        let response = await fetch('https://fakestoreapi.com/products', {
+            method: 'POST',
+            body: new FormData(form)
+        });
+        54
+    }
+</script>
+</html>
