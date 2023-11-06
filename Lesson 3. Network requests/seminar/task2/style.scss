@@ -1,0 +1,11 @@
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  column-count: 2;
+  column-gap: 2rem;
+  column-width: auto;
+  column-fill: balance;
+  img {
+    width: 100%;
+  }
+}
